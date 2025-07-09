@@ -37,7 +37,7 @@ export const Footer = () => {
             {/* Left Branding */}
             <div className="flex flex-col items-center md:items-start">
               <h3 className="text-white text-lg font-semibold mb-1 drop-shadow-lg">
-                Sandun Sameera
+                Sandun <span className="text-blue-400">Sameera</span>
               </h3>
               <p className="text-sm drop-shadow-md">
                 © {new Date().getFullYear()} All rights reserved.

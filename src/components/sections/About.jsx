@@ -10,7 +10,13 @@ export const About = () => {
     "CSS",
   ];
 
-  const backendSkills = ["Node.js", "Python", "MongoDB", "PHP", "Express.js"];
+  const backendSkills = [
+    "Node.js", 
+    "Python", 
+    "MongoDB", 
+    "PHP", 
+    "Express.js"
+  ];
 
   return (
     <section

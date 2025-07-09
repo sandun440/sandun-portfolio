@@ -21,13 +21,12 @@ export const Contact = () => {
       )
       .then((result) => {
         alert("Message Sent!");
+        e.target.reset();
         setFormData({ name: "", email: "", message: "" });
-        
-
       })
       .catch((error) => {
-  console.error("EmailJS error:", error);
-  alert("Oops! Something went wrong. Check console for details.");
+        console.error("EmailJS error:", error);
+        alert("Oops! Something went wrong. Check console for details.");
       });
   };
 
@@ -39,10 +38,11 @@ export const Contact = () => {
       <RevealOnScroll>
         <div className="px-4 w-full min-w-[300px] md:w-[500px] sm:w-2/3 p-6">
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            {" "}
             Get In Touch
           </h2>
+
           <form className="space-y-6" onSubmit={handleSubmit}>
+            {/* Visible Name Field */}
             <div className="relative">
               <input
                 type="text"
@@ -58,6 +58,11 @@ export const Contact = () => {
               />
             </div>
 
+            {/* Hidden fields for from_name and title */}
+            <input type="hidden" name="from_name" value={formData.name} />
+            <input type="hidden" name="title" value={formData.name} />
+
+            {/* Email Field */}
             <div className="relative">
               <input
                 type="email"
@@ -73,6 +78,7 @@ export const Contact = () => {
               />
             </div>
 
+            {/* Message Field */}
             <div className="relative">
               <textarea
                 id="message"
@@ -88,6 +94,7 @@ export const Contact = () => {
               />
             </div>
 
+            {/* Submit Button */}
             <button
               type="submit"
               className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"

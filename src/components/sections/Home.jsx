@@ -136,20 +136,7 @@
               transparent 100%)`
           }}
         />
-        
-        {/* Additional smaller glow layer */}
-        <div
-          className="absolute w-[400px] h-[400px] rounded-full blur-2xl pointer-events-none transition-all duration-100 opacity-40"
-          style={{
-            left: `${mousePosition.x}%`,
-            top: `${mousePosition.y}%`,
-            transform: 'translate(-50%, -50%)',
-            background: `radial-gradient(circle, 
-              rgba(59, 130, 246, 0.2) 0%, 
-              rgba(139, 92, 246, 0.15) 50%, 
-              transparent 100%)`
-          }}
-        />
+      
 
         <RevealOnScroll>
           <div className="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-20 z-10 max-w-6xl mx-auto">

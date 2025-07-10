@@ -9,6 +9,7 @@ import "./index.css";
 import { Contact } from "./components/sections/Contact";
 import { Footer } from "./components/sections/footer";
 import backgroundImage from "/background.jpg"; // Add your background image here
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -28,6 +29,7 @@ function App() {
           backgroundAttachment: 'fixed'
         }}
       >
+        <Toaster position="top-right" reverseOrder={false} />
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black/70 z-0"></div>
         

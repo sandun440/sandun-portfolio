@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import emailjs from "emailjs-com";
+import { toast } from "react-hot-toast"; // ✅ Import toast
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,8 @@ export const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const loadingToast = toast.loading("Sending message...");
+
     emailjs
       .sendForm(
         import.meta.env.VITE_SERVICE_ID,
@@ -20,13 +23,13 @@ export const Contact = () => {
         import.meta.env.VITE_PUBLIC_KEY
       )
       .then((result) => {
-        alert("Message Sent!");
+        toast.success("Message sent successfully!", { id: loadingToast });
         e.target.reset();
         setFormData({ name: "", email: "", message: "" });
       })
       .catch((error) => {
         console.error("EmailJS error:", error);
-        alert("Oops! Something went wrong. Check console for details.");
+        toast.error("Oops! Something went wrong.", { id: loadingToast });
       });
   };
 
@@ -42,7 +45,6 @@ export const Contact = () => {
           </h2>
 
           <form className="space-y-6" onSubmit={handleSubmit}>
-            {/* Visible Name Field */}
             <div className="relative">
               <input
                 type="text"
@@ -58,11 +60,9 @@ export const Contact = () => {
               />
             </div>
 
-            {/* Hidden fields for from_name and title */}
             <input type="hidden" name="from_name" value={formData.name} />
             <input type="hidden" name="title" value={formData.name} />
 
-            {/* Email Field */}
             <div className="relative">
               <input
                 type="email"
@@ -78,7 +78,6 @@ export const Contact = () => {
               />
             </div>
 
-            {/* Message Field */}
             <div className="relative">
               <textarea
                 id="message"
@@ -94,7 +93,6 @@ export const Contact = () => {
               />
             </div>
 
-            {/* Submit Button */}
             <button
               type="submit"
               className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"

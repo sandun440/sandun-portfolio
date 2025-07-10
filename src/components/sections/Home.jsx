@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import { ChevronDown, Github, Linkedin } from "lucide-react";
 import profilePic from "../../assets/profile.jpg";
 
+// Reveal on scroll animation
 const RevealOnScroll = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
-
   return (
     <div
       className={`transition-all duration-1000 ${
@@ -37,14 +36,15 @@ export const Home = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [particles, setParticles] = useState([]);
 
-  // Typing effect logic
   useEffect(() => {
     const role = roles[currentRole];
     let typingSpeed = isDeleting ? 10 : 80;
 
     const timeout = setTimeout(() => {
       setDisplayedText((prev) =>
-        !isDeleting ? role.substring(0, prev.length + 1) : role.substring(0, prev.length - 1)
+        !isDeleting
+          ? role.substring(0, prev.length + 1)
+          : role.substring(0, prev.length - 1)
       );
 
       if (!isDeleting && displayedText === role) {
@@ -58,7 +58,6 @@ export const Home = () => {
     return () => clearTimeout(timeout);
   }, [displayedText, isDeleting, currentRole]);
 
-  // Particles
   useEffect(() => {
     const generateParticles = () => {
       const newParticles = [];
@@ -102,6 +101,7 @@ export const Home = () => {
         `,
       }}
     >
+      {/* Animation Keyframes */}
       <style jsx>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px) translateX(0px); }
@@ -118,7 +118,7 @@ export const Home = () => {
         }
       `}</style>
 
-      {/* Background Particles */}
+      {/* Background particles */}
       {particles.map((particle) => (
         <div
           key={particle.id}
@@ -146,7 +146,7 @@ export const Home = () => {
         />
       ))}
 
-      {/* Cursor Glow */}
+      {/* Cursor glow effect */}
       <div
         className="absolute w-[300px] h-[300px] rounded-full blur-xl pointer-events-none transition-all duration-10 opacity-100"
         style={{
@@ -157,13 +157,14 @@ export const Home = () => {
         }}
       />
 
-      {/* Main Content */}
+      {/* Main content */}
       <RevealOnScroll>
         <div className="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-20 z-10 max-w-6xl mx-auto">
-          {/* Profile Image */}
-          <div className="relative group">
+
+          {/* Profile picture */}
+          <div className="relative group mt-18 px-4 sm:px-6 md:px-0 sm:mt-0">
             <div
-              className="w-60 h-60 sm:w-72 sm:h-72 md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] rounded-full overflow-hidden flex-shrink-0 relative md:left-[-40px] cursor-pointer"
+              className="w-72 h-72 sm:w-96 sm:h-96 md:w-[480px] md:h-[480px] lg:w-[550px] lg:h-[550px] rounded-full overflow-hidden flex-shrink-0 relative md:left-[-40px] md:top-[60px] mx-auto md:mx-0 cursor-pointer"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
@@ -201,8 +202,8 @@ export const Home = () => {
             </div>
           </div>
 
-          {/* Text Content */}
-          <div className="text-center md:text-left">
+          {/* Text content */}
+          <div className="text-center md:text-left max-w-xl mx-auto md:mx-0">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
                 Hi, I'm
@@ -213,7 +214,6 @@ export const Home = () => {
               </span>
             </h1>
 
-            {/* Role with Typewriter */}
             <div className="mb-8 h-8 flex items-center justify-center md:justify-start">
               <span className="text-gray-400 text-lg mr-2">I'm a</span>
               <span className="text-blue-400 text-lg font-semibold min-w-[200px] text-left whitespace-nowrap">
@@ -222,7 +222,7 @@ export const Home = () => {
               </span>
             </div>
 
-            <p className="text-gray-400 text-base sm:text-lg mb-8 max-w-md sm:max-w-lg mx-auto md:mx-0 leading-relaxed">
+            <p className="text-gray-400 text-base sm:text-lg mb-8 leading-relaxed">
               passionate and dedicated Software Engineering student at
               <span className="text-blue-400 font-medium">
                 {" "}
@@ -232,7 +232,6 @@ export const Home = () => {
               especially in web and mobile development.
             </p>
 
-            {/* Buttons */}
             <div className="flex justify-center md:justify-start space-x-4 mb-8">
               <a
                 href="#projects"
@@ -248,7 +247,6 @@ export const Home = () => {
               </a>
             </div>
 
-            {/* Social Icons */}
             <div className="flex justify-center md:justify-start space-x-6">
               {[
                 {
@@ -276,7 +274,6 @@ export const Home = () => {
         </div>
       </RevealOnScroll>
 
-      {/* Scroll Icon */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 animate-bounce">
         <ChevronDown size={24} />
       </div>

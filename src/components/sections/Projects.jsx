@@ -10,12 +10,15 @@ export const Projects = () => {
       <RevealOnScroll>
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            Featured Projects
+            Projects
           </h2>
 
           <div className="grid grid-cols-1 gap-6">
             {/* Crystal Beauty Clare Project */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
+            <div className="relative overflow-hidden group p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
+              {/* Shine effect overlay */}
+              <div className="absolute inset-0 -left-full group-hover:left-full bg-gradient-to-r from-transparent via-white/20 to-transparent w-full h-full transition-all duration-2000 ease-out pointer-events-none" />
+              
               <h3 className="text-xl font-bold mb-2">Crystal Beauty Clare Web App</h3>
               <p className="text-gray-400 mb-4">
                 A full-stack web application designed for Crystal Beauty Clare — a modern beauty service platform. 
@@ -55,7 +58,10 @@ export const Projects = () => {
             </div>
 
             {/* Movie Finder Project */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
+            <div className="relative overflow-hidden group p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
+              {/* Shine effect overlay */}
+              <div className="absolute inset-0 -left-full group-hover:left-full bg-gradient-to-r from-transparent via-white/20 to-transparent w-full h-full transition-all duration-2000 ease-out pointer-events-none" />
+              
               <h3 className="text-xl font-bold mb-2">Movie Finder</h3>
               <p className="text-gray-400 mb-4">
                 A HTML/CSS-based movie search application that lets users find movies, view details, and explore trending films.

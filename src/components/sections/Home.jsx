@@ -204,7 +204,7 @@ export const Home = () => {
 
           {/* Text content */}
           <div className="text-center md:text-left max-w-xl mx-auto md:mx-0">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight whitespace-nowrap">
               <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
                 Hi, I'm
               </span>

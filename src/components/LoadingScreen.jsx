@@ -7,7 +7,6 @@ export const LoadingScreen = ({ onComplete }) => {
   const [currentFullText, setCurrentFullText] = useState(fullTextDesktop);
 
   useEffect(() => {
-    // Detect screen width on mount
     if (window.innerWidth <= 640) {
       setCurrentFullText(fullTextMobile);
     } else {
@@ -33,14 +32,16 @@ export const LoadingScreen = ({ onComplete }) => {
   }, [currentFullText, onComplete]);
 
   return (
-    <div className="fixed inset-0 z-50 bg-black text-gray-100 flex flex-col items-center justify-center px-4">
-      <div className="mb-4 text-2xl sm:text-3xl md:text-4xl font-mono font-bold text-center break-words">
-        {text}
-        <span className="animate-blink ml-1">|</span>
-      </div>
+    <div className="fixed inset-0 z-50 bg-black flex items-center justify-center px-6 sm:px-8">
+      <div className="flex flex-col items-center justify-center text-gray-100 w-full max-w-2xl">
+        <div className="mb-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-mono font-bold text-center leading-snug break-words">
+          {text}
+          <span className="animate-blink ml-1">|</span>
+        </div>
 
-      <div className="w-full max-w-[250px] h-[2px] bg-gray-800 rounded relative overflow-hidden">
-        <div className="w-[40%] h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] animate-loading-bar"></div>
+        <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-[3px] bg-gray-800 rounded overflow-hidden relative">
+          <div className="w-[40%] h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] animate-loading-bar"></div>
+        </div>
       </div>
     </div>
   );

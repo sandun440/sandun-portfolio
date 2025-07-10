@@ -10,6 +10,30 @@ body {
 }
 
 @layer utilities {
+  @keyframes shine {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    left: 100%;
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.animate-shine {
+  animation: shine 2s linear infinite;
+}
 
   @keyframes blink {
     0%,

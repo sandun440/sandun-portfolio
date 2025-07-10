@@ -8,7 +8,7 @@ import { Projects } from "./components/sections/Projects";
 import "./index.css";
 import { Contact } from "./components/sections/Contact";
 import { Footer } from "./components/sections/footer";
-import backgroundImage from "/back.jpg"; // Add your background image here
+import backgroundImage from "/background.jpg"; 
 import { Toaster } from 'react-hot-toast';
 
 function App() {

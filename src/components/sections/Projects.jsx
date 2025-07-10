@@ -33,10 +33,10 @@ export const Projects = () => {
                 ))}
               </div>
 
-              <div className="flex items-center gap-50 my-4">
+              <div className="flex flex-wrap gap-6 my-4">
                 <a
                   href="https://cbc-frontend-xi.vercel.app/"
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                  className="text-blue-400 hover:text-blue-300 transition-colors w-full sm:w-auto text-center"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -44,7 +44,7 @@ export const Projects = () => {
                 </a>
                 <a
                   href="https://github.com/sandun440/cbc-frontend.git"
-                  className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1"
+                  className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1 w-full sm:w-auto justify-center sm:justify-start"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -72,10 +72,10 @@ export const Projects = () => {
                 ))}
               </div>
 
-              <div className="flex items-center gap-50 my-4">
+              <div className="flex flex-wrap gap-6 my-4">
                 <a
                   href="https://sandun440.github.io/Movie-Finder/"
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                  className="text-blue-400 hover:text-blue-300 transition-colors w-full sm:w-auto text-center"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -83,7 +83,7 @@ export const Projects = () => {
                 </a>
                 <a
                   href="https://github.com/sandun440/Movie-Finder"
-                  className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1"
+                  className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1 w-full sm:w-auto justify-center sm:justify-start"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

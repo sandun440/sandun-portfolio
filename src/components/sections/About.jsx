@@ -1,120 +1,227 @@
+import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
+import CountUp from "react-countup";
+import profilePic from "../../assets/profile.jpg";
 
 export const About = () => {
+  const [activeTab, setActiveTab] = useState("frontend");
+
+  // Skills with descriptions and proficiency % for progress bars
   const frontendSkills = [
-    "React",
-    "Next.js",
-    "JavaScript",
-    "TailwindCSS",
-    "HTML",
-    "CSS",
+    {
+      name: "React",
+      desc: "Experienced with React hooks, context, and router",
+      proficiency: 90,
+    },
+    {
+      name: "Next.js",
+      desc: "SSR & static generation with Next.js",
+      proficiency: 85,
+    },
+    {
+      name: "JavaScript",
+      desc: "ES6+, async programming, DOM manipulation",
+      proficiency: 95,
+    },
+    {
+      name: "TailwindCSS",
+      desc: "Utility-first CSS for rapid UI design",
+      proficiency: 80,
+    },
+    {
+      name: "HTML",
+      desc: "Semantic and accessible HTML5 markup",
+      proficiency: 90,
+    },
+    {
+      name: "CSS",
+      desc: "Flexbox, Grid, animations, responsive design",
+      proficiency: 85,
+    },
   ];
 
-  const backendSkills = ["Node.js", "Python", "MongoDB", "PHP", "Express.js"];
+  const backendSkills = [
+    {
+      name: "Node.js",
+      desc: "Server-side JavaScript runtime environment",
+      proficiency: 85,
+    },
+    {
+      name: "Python",
+      desc: "Python scripting and backend frameworks",
+      proficiency: 80,
+    },
+    { name: "MongoDB", desc: "NoSQL database management", proficiency: 75 },
+    {
+      name: "PHP",
+      desc: "Backend scripting & web development",
+      proficiency: 70,
+    },
+    { name: "Express.js", desc: "Node.js web framework", proficiency: 80 },
+  ];
+
+  const achievements = [
+    { label: "Years of Experience", count: 2 },
+    { label: "Projects Completed", count: 2 },
+    { label: "Certifications", count: 1 },
+  ];
 
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center py-20 bg-gradient-to-b"
+      className="min-h-screen flex flex-col items-center justify-center py-20 bg-gradient-to-b  text-white px-6"
     >
       <RevealOnScroll>
-        <div className="max-w-5xl w-full mx-auto px-6">
-          {/* About Title */}
-          <h2 className="text-4xl font-extrabold text-center mb-12 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            About Me
+        {/* Profile Photo */}
+        <div className="mb-12">
+          <div className="mx-auto w-40 h-40 rounded-full overflow-hidden shadow-lg transition-transform hover:scale-105 cursor-pointer">
+            <img
+              src={profilePic} // Replace with your photo path
+              alt="Profile"
+              className="object-cover w-full h-full"
+            />
+          </div>
+        </div>
+
+        {/* Title */}
+        <h2 className="text-5xl font-extrabold text-center mb-10 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          About Me
+        </h2>
+
+        {/* About Text */}
+        <p className="max-w-xl text-center text-gray-300 text-lg mb-12 leading-relaxed">
+          I’m a passionate software engineer focused on building scalable web
+          applications and crafting beautiful user experiences with clean code.
+        </p>
+
+        {/* Tabs for Skills */}
+        <div className="flex justify-center space-x-6 mb-8">
+          <button
+            onClick={() => setActiveTab("frontend")}
+            className={`px-6 py-2 rounded-full font-semibold transition ${
+              activeTab === "frontend"
+                ? "bg-blue-500 text-white shadow-lg"
+                : "bg-blue-500/20 text-blue-300 hover:bg-blue-500/40"
+            }`}
+          >
+            Frontend
+          </button>
+          <button
+            onClick={() => setActiveTab("backend")}
+            className={`px-6 py-2 rounded-full font-semibold transition ${
+              activeTab === "backend"
+                ? "bg-cyan-500 text-white shadow-lg"
+                : "bg-cyan-500/20 text-cyan-300 hover:bg-cyan-500/40"
+            }`}
+          >
+            Backend
+          </button>
+        </div>
+
+        {/* Skills List with Progress Bars & Tooltips */}
+        <div className="max-w-3xl w-full">
+          {(activeTab === "frontend" ? frontendSkills : backendSkills).map(
+            ({ name, desc, proficiency }, index) => (
+              <div key={index} className="mb-6 group relative">
+                <div className="flex justify-between mb-1 text-sm font-semibold text-gray-200 cursor-pointer">
+                  <span>{name}</span>
+                  <span>{proficiency}%</span>
+                </div>
+                <div className="w-full bg-gray-700 rounded-full h-3">
+                  <div
+                    className={`bg-gradient-to-r ${
+                      activeTab === "frontend"
+                        ? "from-blue-400 to-blue-600"
+                        : "from-cyan-400 to-cyan-600"
+                    } h-3 rounded-full transition-all duration-700 ease-out`}
+                    style={{ width: `${proficiency}%` }}
+                  />
+                </div>
+                {/* Tooltip */}
+                <div className="absolute left-1/2 -bottom-8 w-max px-3 py-1 text-xs text-white bg-black bg-opacity-75 rounded opacity-0 group-hover:opacity-100 pointer-events-none transform -translate-x-1/2 transition-opacity">
+                  {desc}
+                </div>
+              </div>
+            )
+          )}
+        </div>
+
+        {/* Achievements */}
+        <div className="flex justify-center space-x-12 mt-14 max-w-4xl w-full">
+          {achievements.map(({ label, count }, idx) => (
+            <div key={idx} className="text-center">
+              <CountUp
+                end={count}
+                duration={2}
+                className="text-5xl font-bold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500"
+              />
+              <p className="mt-2 text-gray-300 font-medium">{label}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Education & Certifications Timeline */}
+        <section id="education" className="mt-20 max-w-4xl w-full px-6">
+          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            Education & Certifications
           </h2>
 
-          {/* About Card */}
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 shadow-lg transition-all hover:shadow-blue-500/20">
-            <p className="text-gray-300 text-lg mb-8 leading-relaxed text-center">
-              I’m a passionate software engineer focused on building scalable
-              web applications and crafting beautiful user experiences with
-              clean code.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Frontend Skills */}
-              <div className="bg-gradient-to-br from-blue-900/10 to-blue-500/5 p-6 rounded-xl transition-all hover:scale-[1.02] hover:shadow-blue-500/10">
-                <h3 className="text-xl font-semibold text-blue-400 mb-4">
-                  🚀 Frontend Skills
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {frontendSkills.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="bg-blue-500/10 text-blue-300 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-blue-500/20 hover:text-white transition"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Backend Skills */}
-              <div className="bg-gradient-to-br from-cyan-900/10 to-cyan-500/5 p-6 rounded-xl transition-all hover:scale-[1.02] hover:shadow-cyan-500/10">
-                <h3 className="text-xl font-semibold text-cyan-400 mb-4">
-                  🧠 Backend Skills
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {backendSkills.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="bg-cyan-500/10 text-cyan-300 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-cyan-500/20 hover:text-white transition"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Education & Certifications Section */}
-          <section id="education" className="py-20 px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Education & Certifications
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Education Card */}
-              <div className="p-6 rounded-xl bg-gradient-to-br from-blue-900/10 to-blue-500/5 border border-white/10 shadow-md hover:shadow-blue-500/20 transition-all transform hover:scale-[1.02]">
-                <h3 className="text-xl font-semibold text-blue-300 mb-2 flex items-center gap-2">
+          <div className="relative border-l-2 border-gray-700 pl-8 space-y-12">
+            {/* Timeline Item 1 - Degree */}
+            <div className="relative group">
+              <span className="absolute -left-4 top-2 w-4 h-4 bg-blue-500 rounded-full ring-4 ring-gray-900 transition-transform group-hover:scale-125" />
+              <div className="bg-white/5 border border-white/10 rounded-lg p-6 shadow-md hover:shadow-blue-500/10 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-blue-400 mb-1 flex items-center gap-2">
                   🎓 Bachelor’s Degree
                 </h3>
                 <p className="text-white font-medium">
-                  Bachelor of Software Engineering
+                  Bachelor of Software Engineering (Hons)
                 </p>
-                <p className="text-gray-300">
-                  The Open University of Sri Lanka
+                <p className="text-gray-400">
+                  The Open University of Sri Lanka - Nawala.
                 </p>
-                <p className="text-sm text-blue-200 mt-1">2023 – Present</p>
-                <div className="mt-4">
-                  <span className="inline-block px-3 py-1 text-xs text-blue-100 bg-blue-500/20 rounded-full">
-                    Ongoing
-                  </span>
-                </div>
+                <p className="text-sm text-blue-300 mt-1">2023 – Present</p>
+                <span className="inline-block mt-3 px-3 py-1 text-xs text-blue-100 bg-blue-500/20 rounded-full">
+                  Ongoing
+                </span>
               </div>
+            </div>
 
-              {/* Certification Card */}
-              <div className="p-6 rounded-xl bg-gradient-to-br from-cyan-900/10 to-cyan-500/5 border border-white/10 shadow-md hover:shadow-cyan-500/20 transition-all transform hover:scale-[1.02]">
-                <h3 className="text-xl font-semibold text-cyan-300 mb-2 flex items-center gap-2">
+            {/* Timeline Item 2 - Certification */}
+            <div className="relative group">
+              <span className="absolute -left-4 top-2 w-4 h-4 bg-cyan-500 rounded-full ring-4 ring-gray-900 transition-transform group-hover:scale-125" />
+              <div className="bg-white/5 border border-white/10 rounded-lg p-6 shadow-md hover:shadow-cyan-500/10 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-cyan-400 mb-1 flex items-center gap-2">
                   🧑‍💻 Certification
                 </h3>
                 <p className="text-white font-medium">
-                  Full-Stack Web Development (MERN)
+                  <a
+                    href="https://https://certificate.skyrek.com/certifcates/completion/z2do8ktmAlAb.com/certificate-url" // 🔗 Replace with actual certificate URL
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4 hover:text-cyan-300 transition"
+                  >
+                    Full-Stack Web Development (MERN)
+                  </a>
                 </p>
-                <p className="text-gray-300">SKYREK Academy</p>
-                <p className="text-sm text-cyan-200 mt-1">2023 – 2024</p>
-                <div className="mt-4">
-                  <span className="inline-block px-3 py-1 text-xs text-cyan-100 bg-cyan-500/20 rounded-full">
-                    Completed
-                  </span>
-                </div>
+                <p className="text-gray-400">SKYREK Academy</p>
+                <p className="text-sm text-cyan-300 mt-1">2023 – 2024</p>
+                <span className="inline-block mt-3 px-3 py-1 text-xs text-cyan-100 bg-cyan-500/20 rounded-full">
+                  Completed
+                </span>
               </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </RevealOnScroll>
+
+      {/* Additional styles for tooltip */}
+      <style>{`
+        /* Ensure tooltip doesn't get cut off */
+        #about section div.relative {
+          position: relative;
+        }
+      `}</style>
     </section>
   );
 };

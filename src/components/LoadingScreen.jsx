@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 export const LoadingScreen = ({ onComplete }) => {
   const [text, setText] = useState("");
-  const fullTextMobile = "< Welcome.../>";
-  const fullTextDesktop = "< Welcome to my Portfolio.../>";
+  const fullTextMobile = "< Welcome... />";
+  const fullTextDesktop = "< Welcome To My Portfolio... />";
   const [currentFullText, setCurrentFullText] = useState(fullTextDesktop);
 
   useEffect(() => {

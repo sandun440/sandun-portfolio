@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import CountUp from "react-countup";
-import profilePic from "../../assets/profile.jpg";
+import AboutPic from "../../assets/aboutPic.jpg";
 
 export const About = () => {
   const [activeTab, setActiveTab] = useState("frontend");
@@ -75,7 +75,7 @@ export const About = () => {
         <div className="mb-10 sm:mb-12">
           <div className="mx-auto w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden shadow-lg transition-transform hover:scale-105 cursor-pointer">
             <img
-              src={profilePic}
+              src={AboutPic}
               alt="Profile"
               className="object-cover w-full h-full"
             />

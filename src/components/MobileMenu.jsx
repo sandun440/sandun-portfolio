@@ -105,7 +105,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         <div className="mt-16 relative group">
           <a
             href = {mobileCv}
-            download
+            download = "Sandun_Sameera_CV.pdf"
             className={`relative z-10 bg-gradient-to-r from-blue-500 via-blue-600 to-purple-600 text-white py-4 px-12 rounded-2xl font-semibold text-lg transition-all duration-700 flex items-center gap-4 backdrop-blur-sm border border-blue-400/30 shadow-2xl hover:shadow-blue-500/30 hover:scale-105 ${
               menuOpen 
                 ? "opacity-100 translate-y-0 scale-100" 

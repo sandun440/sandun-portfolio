@@ -112,7 +112,7 @@ export const Contact = () => {
               <div className="hidden lg:block">
                 <div className="bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-lg p-6 border border-blue-500/20">
                   <p className="text-white/80 text-sm leading-relaxed">
-                    Feel free to reach out through any of these channels. I'm always excited to discuss new projects and opportunities!
+                    Feel free to reach out through any of these channels. I'm always excited to discuss new projects and opportunities !
                   </p>
                 </div>
               </div>

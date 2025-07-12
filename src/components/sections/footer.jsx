@@ -4,6 +4,7 @@ import {
   FaFacebook,
   FaInstagram,
   FaArrowUp,
+  FaHeart,
 } from "react-icons/fa";
 import { RevealOnScroll } from "../RevealOnScroll";
 
@@ -23,7 +24,7 @@ export const Footer = () => {
 
       <footer
         className="relative mt-20 bg-[rgba(15,15,25,0.85)] backdrop-blur-xl border-t border-white/20 shadow-2xl z-10"
-        style={{ minHeight: "160px" }}
+        style={{ minHeight: "200px" }}
       >
         {/* Glass overlay floating gradients */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -33,52 +34,59 @@ export const Footer = () => {
         </div>
 
         <RevealOnScroll>
-          <div className="max-w-5xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center text-gray-300">
-            {/* Left Branding */}
-            <div className="flex flex-col items-center md:items-start">
-              <h3 className="text-white text-lg font-semibold mb-1 drop-shadow-lg">
-                Sandun <span className="text-blue-400">Sameera</span>
-              </h3>
-              <p className="text-sm drop-shadow-md">
-                © {new Date().getFullYear()} All rights reserved.
-              </p>
+          <div className="max-w-5xl mx-auto px-4 py-8">
+            {/* Main Footer Content */}
+            <div className="flex flex-col md:flex-row justify-between items-center text-gray-300 mb-6">
+              {/* Left Branding */}
+              <div className="flex flex-col items-center md:items-start">
+                <h3 className="text-white text-lg font-semibold mb-1 drop-shadow-lg">
+                  Sandun <span className="text-blue-400">Sameera</span>
+                </h3>
+                <p className="text-sm drop-shadow-md">
+                  © {new Date().getFullYear()} All rights reserved.
+                </p>
+              </div>
+
+              {/* Right Social Icons */}
+              <div className="flex space-x-6 mt-4 md:mt-0 text-xl">
+                {[
+                  {
+                    icon: FaGithub,
+                    href: "https://github.com/sandun440",
+                    label: "GitHub",
+                  },
+                  {
+                    icon: FaLinkedin,
+                    href: "https://linkedin.com/in/sandun-sameera250",
+                    label: "LinkedIn",
+                  },
+                  {
+                    icon: FaFacebook,
+                    href: "https://facebook.com/sandun.sameera.712714",
+                    label: "Facebook",
+                  },
+                  {
+                    icon: FaInstagram,
+                    href: "https://instagram.com/sadun.sameera04",
+                    label: "Instagram",
+                  },
+                ].map(({ icon: Icon, href, label }) => (
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="p-3 rounded-xl bg-[rgba(255,255,255,0.1)] backdrop-blur-sm border border-white/20 hover:bg-[rgba(255,255,255,0.2)] hover:border-blue-400/50 hover:text-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all duration-300 hover:scale-110"
+                  >
+                    <Icon />
+                  </a>
+                ))}
+              </div>
             </div>
 
-            {/* Right Social Icons */}
-            <div className="flex space-x-6 mt-4 md:mt-0 text-xl">
-              {[
-                {
-                  icon: FaGithub,
-                  href: "https://github.com/sandun440",
-                  label: "GitHub",
-                },
-                {
-                  icon: FaLinkedin,
-                  href: "https://linkedin.com/in/sandun-sameera250",
-                  label: "LinkedIn",
-                },
-                {
-                  icon: FaFacebook,
-                  href: "https://facebook.com/sandun.sameera.712714",
-                  label: "Facebook",
-                },
-                {
-                  icon: FaInstagram,
-                  href: "https://instagram.com/sadun.sameera04",
-                  label: "Instagram",
-                },
-              ].map(({ icon: Icon, href, label }) => (
-                <a
-                  key={href}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="p-3 rounded-xl bg-[rgba(255,255,255,0.1)] backdrop-blur-sm border border-white/20 hover:bg-[rgba(255,255,255,0.2)] hover:border-blue-400/50 hover:text-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all duration-300 hover:scale-110"
-                >
-                  <Icon />
-                </a>
-              ))}
+            {/* Bottom Made By Credit */}
+            <div className="border-t border-white/10 pt-4">
             </div>
           </div>
 

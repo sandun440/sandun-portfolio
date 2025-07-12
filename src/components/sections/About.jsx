@@ -8,6 +8,21 @@ export const About = () => {
 
   const frontendSkills = [
     {
+      name: "HTML",
+      desc: "Semantic and accessible HTML5 markup",
+      proficiency: 95,
+    },
+    {
+      name: "CSS",
+      desc: "Flexbox, Grid, animations, responsive design",
+      proficiency: 90,
+    },
+    {
+      name: "JavaScript",
+      desc: "ES6+, async programming, DOM manipulation",
+      proficiency: 95,
+    },
+    {
       name: "React",
       desc: "Experienced with React hooks, context, and router",
       proficiency: 90,
@@ -18,24 +33,9 @@ export const About = () => {
       proficiency: 85,
     },
     {
-      name: "JavaScript",
-      desc: "ES6+, async programming, DOM manipulation",
-      proficiency: 95,
-    },
-    {
       name: "TailwindCSS",
       desc: "Utility-first CSS for rapid UI design",
       proficiency: 80,
-    },
-    {
-      name: "HTML",
-      desc: "Semantic and accessible HTML5 markup",
-      proficiency: 90,
-    },
-    {
-      name: "CSS",
-      desc: "Flexbox, Grid, animations, responsive design",
-      proficiency: 85,
     },
   ];
 
@@ -45,18 +45,26 @@ export const About = () => {
       desc: "Server-side JavaScript runtime environment",
       proficiency: 85,
     },
+    { 
+      name: "Express.js",
+      desc: "Node.js web framework", 
+      proficiency: 80 
+    },
+    { 
+      name: "MongoDB", 
+      desc: "NoSQL database management", 
+      proficiency: 75 
+    },
     {
       name: "Python",
       desc: "Python scripting and backend frameworks",
       proficiency: 80,
     },
-    { name: "MongoDB", desc: "NoSQL database management", proficiency: 75 },
     {
       name: "PHP",
       desc: "Backend scripting & web development",
       proficiency: 70,
     },
-    { name: "Express.js", desc: "Node.js web framework", proficiency: 80 },
   ];
 
   const achievements = [

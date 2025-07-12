@@ -16,15 +16,15 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" }
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
@@ -36,12 +36,13 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
         <div className="absolute top-32 left-1/2 w-20 h-20 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-xl animate-pulse delay-1000"></div>
       </div>
 
-      <nav className={`fixed top-0 w-full z-40 transition-all duration-500 ${
-        scrolled 
-          ? 'bg-[rgba(15,15,25,0.85)] backdrop-blur-xl border-b border-white/20 shadow-2xl' 
-          : 'bg-[rgba(10,10,15,0.7)] backdrop-blur-lg border-b border-white/10 shadow-lg'
-      }`}>
-        
+      <nav
+        className={`fixed top-0 w-full z-40 transition-all duration-500 ${
+          scrolled
+            ? "bg-[rgba(15,15,25,0.85)] backdrop-blur-xl border-b border-white/20 shadow-2xl"
+            : "bg-[rgba(10,10,15,0.7)] backdrop-blur-lg border-b border-white/10 shadow-lg"
+        }`}
+      >
         {/* Liquid glass overlay effects */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-2 -left-4 w-16 h-16 bg-gradient-to-r from-blue-500/30 to-transparent rounded-full blur-2xl animate-pulse"></div>
@@ -51,11 +52,16 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
 
         <div className="max-w-5xl mx-auto px-4 relative">
           <div className="flex justify-between items-center h-16">
-            
             {/* Left - Logo with liquid effect */}
-            <a href="#home" className="font-mono text-xl font-bold text-white relative group">
+            <a
+              href="#home"
+              className="font-mono text-xl font-bold text-white relative group"
+            >
               <span className="relative z-10">
-                Sandun <span className="text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text animate-pulse">Sameera</span>
+                Sandun{" "}
+                <span className="text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text animate-pulse">
+                  Sameera
+                </span>
               </span>
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
@@ -66,23 +72,23 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
               onClick={() => setMenuOpen((prev) => !prev)}
             >
               <div className="relative w-6 h-6 flex flex-col justify-center items-center">
-                <div className={`w-5 h-0.5 bg-white transition-all duration-300 absolute ${
-                  menuOpen 
-                    ? 'rotate-45 translate-y-0' 
-                    : 'translate-y-[-4px]'
-                }`}></div>
-                <div className={`w-5 h-0.5 bg-white transition-all duration-300 absolute ${
-                  menuOpen 
-                    ? 'opacity-0 scale-0' 
-                    : 'opacity-100 scale-100'
-                }`}></div>
-                <div className={`w-5 h-0.5 bg-white transition-all duration-300 absolute ${
-                  menuOpen 
-                    ? '-rotate-45 translate-y-0' 
-                    : 'translate-y-[4px]'
-                }`}></div>
+                <div
+                  className={`w-5 h-0.5 bg-white transition-all duration-300 absolute ${
+                    menuOpen ? "rotate-45 translate-y-0" : "translate-y-[-4px]"
+                  }`}
+                ></div>
+                <div
+                  className={`w-5 h-0.5 bg-white transition-all duration-300 absolute ${
+                    menuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+                  }`}
+                ></div>
+                <div
+                  className={`w-5 h-0.5 bg-white transition-all duration-300 absolute ${
+                    menuOpen ? "-rotate-45 translate-y-0" : "translate-y-[4px]"
+                  }`}
+                ></div>
               </div>
-              
+
               {/* Liquid glass hover effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
@@ -105,14 +111,16 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
               {/* Download CV Button with liquid glass effect */}
               <div className="ml-4 relative group">
                 <a
-                  href= {navBarCv}
-                  download = "Sandun_Sameera_CV.pdf"
+                  href={navBarCv}
+                  download="Sandun_Sameera_CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="relative z-10 bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-6 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-sm font-medium flex items-center gap-2 backdrop-blur-sm border border-blue-400/30 shadow-lg hover:shadow-blue-500/25 hover:shadow-xl"
                 >
                   <span>Download CV</span>
                   <FaDownload className="animate-bounce" />
                 </a>
-                
+
                 {/* Liquid glass effects around button */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

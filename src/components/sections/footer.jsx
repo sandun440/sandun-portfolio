@@ -4,7 +4,6 @@ import {
   FaFacebook,
   FaInstagram,
   FaArrowUp,
-  FaHeart,
 } from "react-icons/fa";
 import { RevealOnScroll } from "../RevealOnScroll";
 
@@ -23,8 +22,8 @@ export const Footer = () => {
       </div>
 
       <footer
-        className="relative mt-20 bg-[rgba(15,15,25,0.85)] backdrop-blur-xl border-t border-white/20 shadow-2xl z-10"
-        style={{ minHeight: "200px" }}
+        className="relative mt-16 bg-[rgba(15,15,25,0.85)] backdrop-blur-xl border-t border-white/20 shadow-2xl z-10"
+        style={{ minHeight: "120px" }}
       >
         {/* Glass overlay floating gradients */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -34,9 +33,9 @@ export const Footer = () => {
         </div>
 
         <RevealOnScroll>
-          <div className="max-w-5xl mx-auto px-4 py-8">
+          <div className="max-w-5xl mx-auto px-4 py-5">
             {/* Main Footer Content */}
-            <div className="flex flex-col md:flex-row justify-between items-center text-gray-300 mb-6">
+            <div className="flex flex-col md:flex-row justify-between items-center text-gray-300 mb-4">
               {/* Left Branding */}
               <div className="flex flex-col items-center md:items-start">
                 <h3 className="text-white text-lg font-semibold mb-1 drop-shadow-lg">
@@ -86,7 +85,7 @@ export const Footer = () => {
             </div>
 
             {/* Bottom Made By Credit */}
-            <div className="border-t border-white/10 pt-4">
+            <div className="border-t border-white/10 pt-3">
             </div>
           </div>
 

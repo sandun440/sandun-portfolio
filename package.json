@@ -1,6 +1,8 @@
 {
-  "name": "beautiful-portfolio",
-  "homepage": "https://machadop1407.github.io/pedrotech-portfolio",
+  "name": "sandunsameera-portfolio",
+  "description": "A modern developer portfolio built by Sandun Sameera using React, Tailwind CSS, and Vite.",
+  "author": "Sandun Sameera < sandunsameera250@gmail.com >",
+  "homepage": "https://sandunsameera.vercel.app/",
   "private": true,
   "version": "0.0.0",
   "type": "module",

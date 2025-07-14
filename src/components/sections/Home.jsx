@@ -25,8 +25,6 @@ export const Home = () => {
     "Software Engineering Student.",
     "Full Stack Developer.",
     "Web Developer.",
-    "Mobile App Developer.",
-    "Problem Solver.",
   ];
 
   const [currentRole, setCurrentRole] = useState(0);

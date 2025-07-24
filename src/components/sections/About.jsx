@@ -68,7 +68,6 @@ export const About = () => {
   ];
 
   const achievements = [
-    { label: "Years of Experience", count: 1 },
     { label: "Projects Completed", count: 2 },
     { label: "Certifications", count: 1 },
   ];

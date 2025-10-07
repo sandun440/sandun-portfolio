@@ -216,6 +216,32 @@ export const About = () => {
                 </span>
               </div>
             </div>
+
+            {/* Certification */}
+            <div className="relative group">
+              <span className="absolute -left-3 top-2 w-4 h-4 bg-cyan-500 rounded-full ring-4 ring-gray-900 group-hover:scale-125 transition-transform" />
+              <div className="bg-white/5 border border-white/10 rounded-lg p-5 sm:p-6 shadow-md hover:shadow-cyan-500/10 transition-all duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold text-cyan-400 mb-1 flex items-center gap-2">
+                  🧑‍💻 Certification
+                </h3>
+                <p className="text-white font-medium">
+                  <a
+                    href="https://open.uom.lk/lms/mod/customcert/verify_certificate.php"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4 hover:text-cyan-300 transition"
+                  >
+                    Web Design for Beginners
+                  </a>
+                </p>
+                <p className="text-gray-400">Department of Information Technology, Faculty of Information Technology, University of Moratuwa.</p>
+                <p className="text-sm text-cyan-300 mt-1">Verify code : YgWf9wnZpa</p>
+                <p className="text-sm text-cyan-300 mt-1">2024</p>
+                <span className="inline-block mt-3 px-3 py-1 text-xs text-cyan-100 bg-cyan-500/20 rounded-full">
+                  Completed
+                </span>
+              </div>
+            </div>
           </div>
         </section>
       </RevealOnScroll>

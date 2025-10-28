@@ -213,8 +213,8 @@ export const Home = () => {
             </h1>
 
             <div className="mb-8 h-8 flex items-center justify-center md:justify-start">
-              <span className="text-gray-400 text-lg mr-2">I'm a</span>
-              <span className="text-blue-400 text-lg font-semibold min-w-[200px] text-left whitespace-nowrap">
+              <span className="text-gray-400 text-xl mr-2">I'm a</span>
+              <span className="text-blue-400 text-xl font-semibold min-w-[200px] text-left whitespace-nowrap">
                 {displayedText}
                 <span className="animate-blink ml-1">|</span>
               </span>
@@ -222,6 +222,7 @@ export const Home = () => {
 
             <p className="text-gray-400 text-base sm:text-lg mb-8 leading-relaxed">
               passionate and dedicated Software Engineering student at
+              <br />
               <span className="text-blue-400 font-medium">
                 {" "}
                 The Open University of Sri Lanka

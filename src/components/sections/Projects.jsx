@@ -52,7 +52,16 @@ export const Projects = () => {
                   rel="noopener noreferrer"
                 >
                   <FaGithub className="opacity-70 text-lg" />
-                  Github Link
+                  Frontend Github Link
+                </a>
+                <a
+                  href="https://github.com/sandun440/cbc-backend.git"
+                  className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1 w-full sm:w-auto justify-center sm:justify-start"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub className="opacity-70 text-lg" />
+                  Backend Github Link
                 </a>
               </div>
             </div>

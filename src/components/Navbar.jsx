@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaDownload } from "react-icons/fa";
-import navBarCv from "../assets/CV/CV_Sandun_Sameera.pdf";
+import navBarCv from "/CV_Sandun_Sameera.pdf";
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -114,7 +114,6 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
                   href={navBarCv}
                   download="Sandun_Sameera_CV.pdf"
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="relative z-10 bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-6 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-sm font-medium flex items-center gap-2 backdrop-blur-sm border border-blue-400/30 shadow-lg hover:shadow-blue-500/25 hover:shadow-xl"
                 >
                   <span>Download CV</span>

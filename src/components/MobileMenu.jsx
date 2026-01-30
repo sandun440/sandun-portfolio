@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 import { FaDownload, FaTimes } from "react-icons/fa";
-import mobileCv from "/SandunSameera_cv.pdf";
+
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
+
+  const mobileCv =  "/SandunSameera_cv.pdf";
+
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";

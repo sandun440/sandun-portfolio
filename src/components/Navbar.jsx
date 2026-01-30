@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaDownload } from "react-icons/fa";
-import navBarCv from "/SandunSameera_cv.pdf";
+
+const navBarCv = "/SandunSameera_cv.pdf";
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
   const [scrolled, setScrolled] = useState(false);

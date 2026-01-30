@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { FaDownload, FaTimes } from "react-icons/fa";
 
-const mobileCv = "/SandunSameera_cv.pdf";
+import mobileCv from "/SandunSameera_cv.pdf";
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
 

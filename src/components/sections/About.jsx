@@ -3,6 +3,7 @@ import { RevealOnScroll } from "../RevealOnScroll";
 import CountUp from "react-countup";
 import AboutPic from "../../assets/aboutPic.jpg";
 import { FaLightbulb, FaClock, FaEye, FaUsers, FaArrowsAlt } from "react-icons/fa";
+import { Education } from "./Education";
 
 export const About = () => {
   const [activeTab, setActiveTab] = useState("frontend");
@@ -150,84 +151,7 @@ export const About = () => {
         </div>
 
         {/* Education Timeline */}
-        <section id="education" className="mt-20 max-w-4xl w-full px-4 sm:px-6">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-14 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            Education & Certifications
-          </h2>
-
-          <div className="relative border-l-2 border-gray-700 pl-6 space-y-12">
-            {/* Degree */}
-            <div className="relative group">
-              <span className="absolute -left-3 top-2 w-4 h-4 bg-blue-500 rounded-full ring-4 ring-gray-900 group-hover:scale-125 transition-transform" />
-              <div className="bg-white/5 border border-white/10 rounded-lg p-5 sm:p-6 shadow-md hover:shadow-blue-500/10 transition-all duration-300">
-                <h3 className="text-lg sm:text-xl font-semibold text-blue-400 mb-1 flex items-center gap-2">
-                  🎓 Bachelor’s Degree
-                </h3>
-                <p className="text-white font-medium">
-                  Bachelor of Software Engineering (Hons)
-                </p>
-                <p className="text-gray-400">
-                  The Open University of Sri Lanka - Nawala.
-                </p>
-                <p className="text-sm text-blue-300 mt-1">2023 – Present</p>
-                <span className="inline-block mt-3 px-3 py-1 text-xs text-blue-100 bg-blue-500/20 rounded-full">
-                  Ongoing
-                </span>
-              </div>
-            </div>
-
-            {/* Certification */}
-            <div className="relative group">
-              <span className="absolute -left-3 top-2 w-4 h-4 bg-cyan-500 rounded-full ring-4 ring-gray-900 group-hover:scale-125 transition-transform" />
-              <div className="bg-white/5 border border-white/10 rounded-lg p-5 sm:p-6 shadow-md hover:shadow-cyan-500/10 transition-all duration-300">
-                <h3 className="text-lg sm:text-xl font-semibold text-cyan-400 mb-1 flex items-center gap-2">
-                  🧑‍💻 Certification
-                </h3>
-                <p className="text-white font-medium">
-                  <a
-                    href="https://certificate.skyrek.com/certifcates/completion/z2do8ktmAlAb"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 hover:text-cyan-300 transition"
-                  >
-                    Full-Stack Web Development (MERN)
-                  </a>
-                </p>
-                <p className="text-gray-400">SKYREK Academy</p>
-                <p className="text-sm text-cyan-300 mt-1">2023 – 2024</p>
-                <span className="inline-block mt-3 px-3 py-1 text-xs text-cyan-100 bg-cyan-500/20 rounded-full">
-                  Completed
-                </span>
-              </div>
-            </div>
-
-            {/* Certification */}
-            <div className="relative group">
-              <span className="absolute -left-3 top-2 w-4 h-4 bg-cyan-500 rounded-full ring-4 ring-gray-900 group-hover:scale-125 transition-transform" />
-              <div className="bg-white/5 border border-white/10 rounded-lg p-5 sm:p-6 shadow-md hover:shadow-cyan-500/10 transition-all duration-300">
-                <h3 className="text-lg sm:text-xl font-semibold text-cyan-400 mb-1 flex items-center gap-2">
-                  🧑‍💻 Certification
-                </h3>
-                <p className="text-white font-medium">
-                  <a
-                    href="https://open.uom.lk/lms/mod/customcert/verify_certificate.php"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 hover:text-cyan-300 transition"
-                  >
-                    Web Design for Beginners
-                  </a>
-                </p>
-                <p className="text-gray-400">Department of Information Technology, Faculty of IT, University of Moratuwa.</p>
-                <p className="text-sm text-cyan-300 mt-1">Verify code : YgWf9wnZpa</p>
-                <p className="text-sm text-cyan-300 mt-1">2024</p>
-                <span className="inline-block mt-3 px-3 py-1 text-xs text-cyan-100 bg-cyan-500/20 rounded-full">
-                  Completed
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Education />
       </RevealOnScroll>
     </section>
   );

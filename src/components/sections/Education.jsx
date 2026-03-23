@@ -74,7 +74,7 @@ export const Education = () => {
                 rel="noopener noreferrer"
                 className="hover:text-cyan-300 hover:underline transition-colors"
               >
-                Web Design for Beginners
+                Frontend Web Development
               </a>
             </p>
             <p className="text-gray-400 mt-1">
@@ -82,7 +82,7 @@ export const Education = () => {
               Moratuwa.
             </p>
             <p className="text-sm font-medium text-cyan-300/80 mt-1">
-              Verify code : YgWf9wnZpa
+              Verify code : PCne9wvIRk
             </p>
             <div className="flex items-center gap-3 mt-4">
               <span className="text-sm font-medium text-cyan-300">2026</span>
@@ -107,7 +107,7 @@ export const Education = () => {
                 rel="noopener noreferrer"
                 className="hover:text-cyan-300 hover:underline transition-colors"
               >
-                Frontend Web Development
+                Web Design for Beginners
               </a>
             </p>
             <p className="text-gray-400 mt-1">

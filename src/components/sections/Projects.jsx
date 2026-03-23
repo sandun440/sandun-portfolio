@@ -177,10 +177,9 @@ export const Projects = () => {
               <div className="absolute inset-0 -left-full group-hover:left-full bg-gradient-to-r from-transparent via-white/20 to-transparent w-full h-full transition-all duration-2000 ease-out pointer-events-none" />
 
               <h3 className="text-xl font-bold mb-2">
-                University project - Open Study Learning Platform
+                University project - Group project - Open Study Learning Platform
               </h3>
               <p className="text-gray-400 mb-4">
-                Group project - Open Study Learning Platform
                 A modern, responsive web application designed to provide a seamless
                 learning experience for students and educators. This platform features
                 interactive course materials, progress tracking, and collaborative tools

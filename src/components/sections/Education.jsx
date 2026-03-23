@@ -85,7 +85,7 @@ export const Education = () => {
               Verify code : YgWf9wnZpa
             </p>
             <div className="flex items-center gap-3 mt-4">
-              <span className="text-sm font-medium text-cyan-300">2024</span>
+              <span className="text-sm font-medium text-cyan-300">2026</span>
               <span className="px-3 py-1 text-xs font-semibold text-cyan-100 bg-cyan-500/20 border border-cyan-500/30 rounded-full">
                 Completed
               </span>
